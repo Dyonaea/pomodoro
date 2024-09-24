@@ -21,6 +21,8 @@ let timeSelector = document.getElementById('timeSelector')
 let gear = document.getElementById('gear')
 let form = document.getElementById('form')
 
+let check = document.getElementById('check')
+
 function timerWork(){
     var timer = setInterval(function(){
         if(running){
@@ -48,7 +50,7 @@ function timerWork(){
             }
             sec -=1;
         }
-    }, 10);
+    }, 1000);
 }
 timerWork();
 
@@ -107,13 +109,19 @@ gear.addEventListener('click', () =>{
     form.classList.remove('ghost')
     
 });
- 
-timeSelector.addEventListener('click', () =>{
-    
+
+check.addEventListener('click', () =>{
+    if(running) buttonStop.classList.remove('ghost')
+    else buttonStart.classList.remove('ghost')
+    gear.classList.remove('ghost')
+    timeSelector.classList.remove('ghost')
+    switcherReset.classList.remove('ghost')
+    switcherWork.classList.remove('ghost')
+    timer.classList.remove('ghost')
+    form.classList.add('ghost')
     restTime = formRestTime.value;
     workTime = formWorkTime.value;
     minute = workTime;
     sec = 0;
     displayTime();
-    console.log('aa');
 });
