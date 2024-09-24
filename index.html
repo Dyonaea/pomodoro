@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <title>Pomodoro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
@@ -17,13 +20,25 @@
                 Pause
             </p>
         </div>
-        <div class="circle">
+        <div class="circle jello-horizontal" id="timeSelector">
             <p id="timer">25:00</p>
             
         </div>
         <div class="button">
             <box-icon name='play-circle' color='#ffffff' id="start"></box-icon>
             <box-icon name='reset' color='#ffffff' id="stop" class="ghost"></box-icon>
+            <box-icon type='solid' color='#ffffff' name='cog' class="rotate-center" id="gear"></box-icon>
+
+        </div>
+        <div  class="ghost select" id="form">
+        <form class="center">
+            <label>Temps de Travail</label>
+            <input value="25" type="number" id="fWork" name="fWork">
+            <br>
+            <label>Temps de pause</label>
+            <input value="5" type="number" id="fRest" name="fRest">
+            <box-icon name='check' color='#ffffff' ></box-icon>
+        </form>
         </div>
     </main>
 

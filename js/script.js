@@ -3,13 +3,23 @@ let running = false;
 let sec = 0;
 let minute = -1;
 
-const restTime = 1
-const workTime = 2
+
+
+let formRestTime = document.getElementById('fRest')
+let formWorkTime = document.getElementById('fWork')
+
+let restTime = formRestTime.value;
+let workTime = formWorkTime.value;
 
 let timetxt = document.getElementById('timer')
 
 let switcherWork = document.getElementById('work')
 let switcherReset = document.getElementById('rest')
+
+let timeSelector = document.getElementById('timeSelector')
+
+let gear = document.getElementById('gear')
+let form = document.getElementById('form')
 
 function timerWork(){
     var timer = setInterval(function(){
@@ -63,7 +73,7 @@ let buttonStart = document.getElementById('start');
 buttonStart.addEventListener('click', () =>{
     if(minute < 0){
         working = true;
-        minute = 2;
+        minute = workTime;
         sec = 0;
     }
     running = true;
@@ -86,4 +96,24 @@ buttonStop.addEventListener('click', () =>{
 });
 
 
-
+gear.addEventListener('click', () =>{
+    buttonStart.classList.add('ghost')
+    buttonStop.classList.add('ghost')
+    gear.classList.add('ghost')
+    timeSelector.classList.add('ghost')
+    switcherReset.classList.add('ghost')
+    switcherWork.classList.add('ghost')
+    timer.classList.add('ghost')
+    form.classList.remove('ghost')
+    
+});
+ 
+timeSelector.addEventListener('click', () =>{
+    
+    restTime = formRestTime.value;
+    workTime = formWorkTime.value;
+    minute = workTime;
+    sec = 0;
+    displayTime();
+    console.log('aa');
+});
