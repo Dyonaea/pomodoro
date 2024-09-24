@@ -2,6 +2,16 @@
     color: white;
 }
 
+h1{
+    font-size: 5rem;
+}
+
+@media (max-width : 800px) {
+    h1{
+        font-size: 2rem;
+    }
+}
+
 body{
     background-color: red;
 
@@ -35,6 +45,25 @@ main{
 }
 
 .button box-icon{
-    width: 48px;
-    height: 48px;
+    width: 5rem;
+    height: 5rem;
+}
+
+.circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10rem;
+    width: 20rem;
+    height: 20rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-color: white;
+    border: solid;
+    border-width: 8px;
+    font-size: 5rem;
 }

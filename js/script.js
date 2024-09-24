@@ -9,7 +9,7 @@ const workTime = 2
 let timetxt = document.getElementById('timer')
 
 let switcherWork = document.getElementById('work')
-let switcherRest = document.getElementById('rest')
+let switcherReset = document.getElementById('rest')
 
 function timerWork(){
     var timer = setInterval(function(){
@@ -25,14 +25,14 @@ function timerWork(){
                     working = false;
                     sec = 0;
                     minute = restTime;
-                    switcherRest.classList.add('selected');
+                    switcherReset.classList.add('selected');
                     switcherWork.classList.remove('selected');
                 }
                 else{
                     working = true;
                     sec = 0;
                     minute = workTime;
-                    switcherRest.classList.remove('selected');
+                    switcherReset.classList.remove('selected');
                     switcherWork.classList.add('selected');
                 }
             }
@@ -81,7 +81,7 @@ buttonStop.addEventListener('click', () =>{
     working = true;
     buttonStop.classList.add('ghost');
     buttonStart.classList.remove('ghost');
-    switcherRest.classList.remove('selected');
+    switcherReset.classList.remove('selected');
     switcherWork.classList.add('selected');
 });
 
