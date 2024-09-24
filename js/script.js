@@ -1,9 +1,7 @@
-let working = true;
-let running = false;
+let working = true; //time type (working or resting)
+let running = false;//if the timer is currently running
 let sec = 0;
-let minute = -1;
-
-
+let minute = -1;    //temporary values
 
 let formRestTime = document.getElementById('fRest')
 let formWorkTime = document.getElementById('fWork')
@@ -14,7 +12,7 @@ let workTime = formWorkTime.value;
 let timetxt = document.getElementById('timer')
 
 let switcherWork = document.getElementById('work')
-let switcherReset = document.getElementById('rest')
+let switcherRest = document.getElementById('rest')
 
 let timeSelector = document.getElementById('timeSelector')
 
@@ -25,26 +23,29 @@ let check = document.getElementById('check')
 
 function timerWork(){
     var timer = setInterval(function(){
+
         if(running){
 
             displayTime();
+
             if(sec <= 0){
                 minute --;
                 sec = 60;
             }
+
             if(minute == -1){
                 if(working){
                     working = false;
                     sec = 0;
                     minute = restTime;
-                    switcherReset.classList.add('selected');
+                    switcherRest.classList.add('selected');
                     switcherWork.classList.remove('selected');
                 }
                 else{
                     working = true;
                     sec = 0;
                     minute = workTime;
-                    switcherReset.classList.remove('selected');
+                    switcherRest.classList.remove('selected');
                     switcherWork.classList.add('selected');
                 }
             }
@@ -52,8 +53,11 @@ function timerWork(){
         }
     }, 1000);
 }
+
+// must be called once to initialize values
 timerWork();
 
+//displays the time remaining as such : "mm:ss"  ex : 00:05
 function displayTime(){
     if (minute < 10){
         timetxt.textContent = '0' + minute +':';
@@ -80,42 +84,42 @@ buttonStart.addEventListener('click', () =>{
     }
     running = true;
     buttonStart.classList.add('ghost');
-    buttonStop.classList.remove('ghost');
+    buttonReset.classList.remove('ghost');
 });
 
-let buttonStop = document.getElementById('stop');
-
-buttonStop.addEventListener('click', () =>{
+let buttonReset = document.getElementById('stop');
+    buttonReset.addEventListener('click', () =>{
     minute = workTime;
     sec = 0;
     displayTime();
     running = false;
     working = true;
-    buttonStop.classList.add('ghost');
+    buttonReset.classList.add('ghost');
     buttonStart.classList.remove('ghost');
-    switcherReset.classList.remove('selected');
+    switcherRest.classList.remove('selected');
     switcherWork.classList.add('selected');
 });
 
-
+//shows parameters and hides the rest
 gear.addEventListener('click', () =>{
     buttonStart.classList.add('ghost')
-    buttonStop.classList.add('ghost')
+    buttonReset.classList.add('ghost')
     gear.classList.add('ghost')
     timeSelector.classList.add('ghost')
-    switcherReset.classList.add('ghost')
+    switcherRest.classList.add('ghost')
     switcherWork.classList.add('ghost')
     timer.classList.add('ghost')
     form.classList.remove('ghost')
     
 });
 
+//hides parameters and shows the rest
 check.addEventListener('click', () =>{
-    if(running) buttonStop.classList.remove('ghost')
+    if(running) buttonReset.classList.remove('ghost')
     else buttonStart.classList.remove('ghost')
     gear.classList.remove('ghost')
     timeSelector.classList.remove('ghost')
-    switcherReset.classList.remove('ghost')
+    switcherRest.classList.remove('ghost')
     switcherWork.classList.remove('ghost')
     timer.classList.remove('ghost')
     form.classList.add('ghost')

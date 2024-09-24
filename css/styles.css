@@ -3,12 +3,14 @@
     -webkit-user-select: none;
     user-select: none;
 }
+
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* form / parameters to change time values */
 .select{
     width: 15rem;
     font-size: x-large;
@@ -20,6 +22,7 @@ main{
     justify-content: center;
     align-items: center;
 }
+
 .center box-icon{
     width: 3rem;
     height: 3rem;
@@ -33,6 +36,7 @@ main{
     margin: 0.5rem;
     font-size: large;
 }
+
 .select label{
     margin: 0.5rem;
     width: 100%;
@@ -53,24 +57,22 @@ h1{
 
 body{
     background-color: #D2042D;
-
 }
 
 
-
+/* the work and rest that are on top of the timer */
 .switcher{
     display: flex;
     justify-content: space-around;
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-    
 }
 
 .switcher p{
     padding: 0.5em 2em 0.5em 2em;
 }
 
+/* current time type (work or rest) */
 .selected{
     color: burlywood;
 }
@@ -80,6 +82,7 @@ body{
     height: 5rem;
 }
 
+/* timer / big circle */
 .circle{
     display: flex;
     align-items: center;
@@ -216,6 +219,7 @@ body{
         }
     }
     
+    /* any display that must be hidden is given this class */
     .ghost{
         display: none;
     }
