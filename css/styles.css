@@ -1,0 +1,35 @@
+*{
+    color: white;
+}
+
+body{
+    background-color: red;
+
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ghost{
+    display: none;
+}
+
+.switcher{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+}
+
+.switcher p{
+    padding: 0.5em 2em 0.5em 2em;
+}
+
+.selected{
+    color: burlywood;
+}

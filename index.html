@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Pomodoro</title>
 </head>
 <body>
-    
+    <main>
+        <h1>TIMER POMODORO</h1>
+        <div class="switcher">
+            <p class="selected" id="work">
+                Travail
+            </p>
+            <p id="rest">
+                Pause
+            </p>
+        </div>
+        <div>
+            <p id="timer">25:00</p>
+        </div>
+        <div>
+            <box-icon name='play-circle' color='#ffffff' id="start"></box-icon>
+            <box-icon name='pause-circle' color='#ffffff' id="stop" class="ghost"></box-icon>
+        </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 </html>
