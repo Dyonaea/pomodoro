@@ -33,3 +33,8 @@ main{
 .selected{
     color: burlywood;
 }
+
+.button box-icon{
+    width: 48px;
+    height: 48px;
+}
